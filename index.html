@@ -1,15 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>
-             проектик
-        </title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Мои задачи</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header__title">Мои задачи</h1>
 
+        <p class="header__description">Планируйте. Делайте. Отмечайте.</p>
+      </header>
 
-        <script src="script.js"></script>
-    </body>
+      <div class="task-container">
+        <form class="task-form">
+          <div class="task-form_group">
+            <label class="task-form__label" for="task-form__input_name">
+              Название*
+            </label>
+
+            <input
+              class="task-form__input"
+              type="text"
+              id="task-form__input_name"
+              name="taskName"
+              placeholder="Например, сверстать форму"
+            />
+          </div>
+
+          <div class="task-form_group">
+            <label class="task-form__label" for="task-form__input_description">
+              Описание <span class="task-form__note">· необязательно</span>
+            </label>
+
+            <input
+              class="task-form__input"
+              type="text"
+              id="task-form__input_description"
+              name="description"
+              placeholder="Что нужно сделать?"
+            />
+          </div>
+
+          <div class="task-form_group">
+            <label class="task-form__label" for="task-form__select">
+              Приоритет
+            </label>
+
+            <select
+              id="task-form__select"
+              class="task-form__select"
+              name="priority"
+            >
+              <option class="task-form__option">Низкий</option>
+              <option class="task-form__option">Средний</option>
+              <option class="task-form__option">Высокий</option>
+            </select>
+          </div>
+        </form>
+
+        <div class="task-container__footer">
+          <p class="task-form__note">*Обязательное поле</p>
+
+          <button class="task-container__button">Добавить</button>
+        </div>
+      </div>
+
+      <section class="task-list__section">
+        <div class="task-list__container-header">
+          <h2 class="task-list__title">Список задач</h2>
+          <p class="task-list__info">6 задач · 2 выпелнено</p>
+        </div>
+        <div class="task-list">
+          <label class="task-card">
+            <input
+              class="task-card__checkbox"
+              type="checkbox"
+              id="task-card__checkbox"
+            />
+            <div class="task-card__content">
+              <p class="task-card__title">Сверстать форму добавления</p>
+
+              <p class="task-card__description">
+                Добавить поля названия и описания, выбор приоритета и кнопку.
+              </p>
+            </div>
+            <div class="task-card__priority">Высокий</div>
+
+            <button class="task-card__button">Удалить</button>
+          </label>
+        </div>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
