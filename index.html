@@ -13,9 +13,9 @@
         <p class="header__description">Планируйте. Делайте. Отмечайте.</p>
       </header>
 
-      <div class="task-container">
-        <form class="task-form">
-          <div class="task-form_group">
+      <form class="task-form">
+        <div class="task-form__fields">
+          <div class="task-form__group">
             <label class="task-form__label" for="task-form__input_name">
               Название*
             </label>
@@ -29,7 +29,7 @@
             />
           </div>
 
-          <div class="task-form_group">
+          <div class="task-form__group">
             <label class="task-form__label" for="task-form__input_description">
               Описание <span class="task-form__note">· необязательно</span>
             </label>
@@ -43,7 +43,7 @@
             />
           </div>
 
-          <div class="task-form_group">
+          <div class="task-form__group">
             <label class="task-form__label" for="task-form__select">
               Приоритет
             </label>
@@ -58,14 +58,14 @@
               <option class="task-form__option">Высокий</option>
             </select>
           </div>
-        </form>
+        </div>
 
         <div class="task-container__footer">
           <p class="task-form__note">*Обязательное поле</p>
 
           <button class="task-container__button">Добавить</button>
         </div>
-      </div>
+      </form>
 
       <section class="task-list__section">
         <div class="task-list__container-header">
@@ -73,23 +73,27 @@
           <p class="task-list__info">6 задач · 2 выпелнено</p>
         </div>
         <div class="task-list">
-          <label class="task-card">
-            <input
-              class="task-card__checkbox"
-              type="checkbox"
-              id="task-card__checkbox"
-            />
-            <div class="task-card__content">
-              <p class="task-card__title">Сверстать форму добавления</p>
+          <div class="task-card">
+            <label class="task-card__label">
+              <input
+                class="task-card__checkbox"
+                type="checkbox"
+                id="task-card__checkbox"
+              />
 
-              <p class="task-card__description">
-                Добавить поля названия и описания, выбор приоритета и кнопку.
-              </p>
-            </div>
+              <div class="task-card__content">
+                <p class="task-card__title">Сверстать форму добавления</p>
+
+                <p class="task-card__description">
+                  Добавить поля названия и описания, выбор приоритета и кнопку.
+                </p>
+              </div>
+            </label>
+
             <div class="task-card__priority">Высокий</div>
 
             <button class="task-card__button">Удалить</button>
-          </label>
+          </div>
         </div>
       </section>
     </div>
