@@ -1,12 +1,24 @@
 @font-face {
   font-family: "Inter";
-  src: url("/fonts/Inter.woff2") format("woff2");
-  font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-weight: 400;
+  src: url("fonts/inter-v20-cyrillic-ext_latin-regular(1).woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/inter-v20-cyrillic-ext_latin-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/inter-v20-cyrillic-ext_latin-700.woff2") format("woff2");
 }
 
-* {
+body {
   font-family: "Inter", sans-serif;
 }
 
@@ -26,7 +38,7 @@ p {
 .header__title {
   font-weight: 400;
   padding-top: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 14px;
 }
 
 .task-form {
@@ -119,14 +131,15 @@ p {
 }
 
 .task-list__title {
-  font-size: 15px;
+  font-size: 18px;
   text-align: left;
+  font-weight: 600;
 }
 
 .task-list__info {
-  font-size: 12px;
+  font-size: 14px;
   text-align: right;
-  color: grey;
+  color: #667182;
 }
 
 .task-list {
@@ -135,7 +148,7 @@ p {
   border-radius: 15px;
   height: 100%;
   align-items: center;
-  gap: 15px;
+  gap: 18px;
 }
 
 .task-card__label {
@@ -146,9 +159,14 @@ p {
 
 .task-card {
   display: flex;
-  gap: 55px;
+  gap: 60px;
   align-items: center;
   padding: 14px;
+}
+
+.task-card__checkbox {
+  width: 22px;
+  margin-left: 8px;
 }
 
 .task-card:hover {
@@ -159,7 +177,10 @@ p {
 .task-card__content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  gap: 2px;
+  margin-left: 15px;
 }
 
 .task-card__title {
@@ -167,23 +188,28 @@ p {
 }
 
 .task-card__description {
-  font-size: 12px;
-  color: gray;
+  font-size: 14px;
+  color: #667182;
+  font-weight: 400;
 }
 
 .task-card__priority {
   color: #a14735;
   background: #fcf0eb;
-  padding: 4px 8px;
+  padding: 6px 8px;
   border-radius: 5px;
   text-align: center;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .task-card__button {
   background: transparent;
   color: grey;
   border: none;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 4px;
 }
 
 .task-card__button:hover {
@@ -192,4 +218,8 @@ p {
 
 .task-card__button:active {
   transform: translateY(2px);
+}
+
+@media screen and (max-width: 343px) and (min_width: 20px) {
+  
 }
