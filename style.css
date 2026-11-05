@@ -169,6 +169,7 @@ p {
   display: flex;
   gap: 4px;
   flex-grow: 1;
+  align-items: center;
 }
 
 .task-card {
