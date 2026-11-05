@@ -2,24 +2,30 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  src: url("fonts/inter-v20-cyrillic-ext_latin-regular(1).woff2")
-    format("woff2");
+  src: url("fonts/inter-400.woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
-  src: url("fonts/inter-v20-cyrillic-ext_latin-500.woff2") format("woff2");
+  src: url("fonts/inter-500.woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("fonts/inter-600.woff2");
 }
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  src: url("fonts/inter-v20-cyrillic-ext_latin-700.woff2") format("woff2");
+  src: url("fonts/inter-700.woff2");
 }
 
 body {
   font-family: "Inter", sans-serif;
+  background-color: #f6f7f9;
 }
 
 h1 {
@@ -38,7 +44,7 @@ p {
 .header__title {
   font-weight: 400;
   padding-top: 15px;
-  padding-bottom: 14px;
+  padding-bottom: 10px;
 }
 
 .task-form {
@@ -59,7 +65,7 @@ p {
 
 .task-form__note {
   color: grey;
-  font-weight: 100;
+  font-size: 14px;
 }
 
 .task-container__button {
@@ -70,6 +76,9 @@ p {
   border-radius: 10px;
   text-align: center;
   font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
 }
 
 .task-form__select {
@@ -77,13 +86,28 @@ p {
   border: 1px solid grey;
   border-radius: 10px;
   font-size: 16px;
+  padding-left: 14px;
+  font-weight: 400;
   background-color: transparent;
   appearance: none;
-  height: 42.6px;
+  height: 100%;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.task-form__select:hover {
+  border-color: #5555d2;
+}
+
+.task-form__select:focus {
+  outline: none;
+  border-color: #5555d2;
 }
 
 .task-form__label {
-  padding-bottom: 6px;
+  padding-bottom: 10px;
+  font-size: 14px;
 }
 
 .task-form__input {
@@ -92,20 +116,12 @@ p {
   border-radius: 10px;
   font-size: 16px;
   height: 25px;
+  letter-spacing: 1.2px;
 }
 
 .task-form__group {
   display: flex;
   flex-direction: column;
-}
-.task-form > :nth-child(1) {
-  flex-basis: 30%;
-}
-.task-form > :nth-child(2) {
-  flex-basis: 47%;
-}
-.task-form > :nth-child(3) {
-  flex-basis: 18%;
 }
 
 .task-container__footer {
@@ -116,7 +132,7 @@ p {
 }
 
 .header {
-  padding-bottom: 30px;
+  padding-bottom: 28px;
 }
 
 .task-list__section {
@@ -140,15 +156,13 @@ p {
   font-size: 14px;
   text-align: right;
   color: #667182;
+  width: 155px;
 }
 
 .task-list {
-  background: white;
-  border: 1px solid gainsboro;
-  border-radius: 15px;
-  height: 100%;
-  align-items: center;
-  gap: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .task-card__label {
@@ -162,16 +176,41 @@ p {
   gap: 60px;
   align-items: center;
   padding: 14px;
+  border: 1px solid gainsboro;
+  border-radius: 15px;
+  background-color: #ffffff;
 }
 
 .task-card__checkbox {
   width: 22px;
+  height: 22px;
   margin-left: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.task-card__checkbox:checked {
+  background-color: #4265cd;
+  border-color: #4265cd;
+}
+
+.task-card__checkbox:checked ~ .task-card__content .task-card__title {
+  color: #667182;
+  text-decoration: line-through;
+}
+
+.task-card:has(.task-card__checkbox:checked) {
+  background-color: #f9fafb;
 }
 
 .task-card:hover {
   background-color: rgb(234, 234, 241);
-  border-radius: 15px;
 }
 
 .task-card__content {
@@ -185,12 +224,14 @@ p {
 
 .task-card__title {
   font-size: 16px;
+  cursor: pointer;
 }
 
 .task-card__description {
   font-size: 14px;
   color: #667182;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .task-card__priority {
@@ -210,16 +251,10 @@ p {
   font-size: 14px;
   font-weight: 400;
   margin-right: 4px;
-}
-
-.task-card__button:hover {
-  border-bottom: 2px solid grey;
+  cursor: pointer;
 }
 
 .task-card__button:active {
-  transform: translateY(2px);
-}
-
-@media screen and (max-width: 343px) and (min_width: 20px) {
-  
+  transform: scale(0.95);
+  transition: transform 0.1s;
 }
