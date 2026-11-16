@@ -7,24 +7,15 @@
 @font-face {
   font-family: "Inter";
   font-style: normal;
-  font-weight: 500;
-  src: url("fonts/inter-500.woff2");
-}
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 600;
   src: url("fonts/inter-600.woff2");
 }
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  src: url("fonts/inter-700.woff2");
+
+* {
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  font-family: "Inter", sans-serif;
   background-color: #f6f7f9;
 }
 
@@ -82,11 +73,10 @@ p {
 }
 
 .task-form__select {
-  padding: 8px 10px;
+  padding: 8px 0px 10px 14px;
   border: 1px solid grey;
   border-radius: 10px;
   font-size: 16px;
-  padding-left: 14px;
   font-weight: 400;
   background-color: transparent;
   appearance: none;
@@ -111,12 +101,12 @@ p {
 }
 
 .task-form__input {
-  padding: 8px 10px;
+  padding-left: 14px;
   border: 1px solid grey;
   border-radius: 10px;
   font-size: 16px;
-  height: 25px;
   letter-spacing: 1.2px;
+  height: 44px;
 }
 
 .task-form__group {
@@ -124,7 +114,7 @@ p {
   flex-direction: column;
 }
 
-.task-container__footer {
+.task-form__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -191,7 +181,6 @@ p {
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: white;
-  cursor: pointer;
   flex-shrink: 0;
   cursor: pointer;
 }
@@ -258,4 +247,85 @@ p {
 .task-card__button:active {
   transform: scale(0.95);
   transition: transform 0.1s;
+}
+
+/*Почему нельзя ставить ровно 375 */
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 16px;
+  }
+
+  .header {
+    padding-bottom: 0;
+  }
+
+  .header__title {
+    padding-top: 0;
+  }
+
+  .task-form__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .task-form__select {
+    height: 44px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .task-form__footer .task-form__note {
+    display: none;
+  }
+
+  .task-container__button {
+    width: 100%;
+  }
+
+  .task-list__container-header {
+    padding-top: 0;
+    padding-bottom: 12px;
+  }
+
+  .task-list__title {
+    margin: 0;
+  }
+
+  .task-list__info {
+    width: auto;
+  }
+  .task-list__info_completed {
+    display: none;
+  }
+  .task-card {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .task-card__label {
+    flex-basis: 100%; /* распр раст*/
+  }
+
+  .task-card__checkbox {
+    margin-left: 0;
+    align-self: baseline;
+    margin: 11px;
+  }
+
+  .task-card__content {
+    margin-left: 0px;
+    gap: 10px;
+    display: -webkit-box; /* Почитать про это!!!*/
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  .task-card__button {
+    margin-left: auto;
+  }
 }

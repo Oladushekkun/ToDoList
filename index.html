@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Мои задачи</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -16,28 +17,28 @@
       <form class="task-form">
         <div class="task-form__fields">
           <div class="task-form__group">
-            <label class="task-form__label" for="task-form__input_name">
+            <label class="task-form__label" for="task-form__input-name">
               Название*
             </label>
 
             <input
               class="task-form__input"
               type="text"
-              id="task-form__input_name"
+              id="task-form__input-name"
               name="taskName"
               placeholder="Например,сверстать форму"
             />
           </div>
 
           <div class="task-form__group">
-            <label class="task-form__label" for="task-form__input_description">
+            <label class="task-form__label" for="task-form__input-description">
               Описание <span class="task-form__note">· необязательно</span>
             </label>
 
             <input
               class="task-form__input"
               type="text"
-              id="task-form__input_description"
+              id="task-form__input-description"
               name="description"
               placeholder="Что нужно сделать?"
             />
@@ -60,7 +61,7 @@
           </div>
         </div>
 
-        <div class="task-container__footer">
+        <div class="task-form__footer">
           <p class="task-form__note">*Обязательное поле</p>
 
           <button class="task-container__button">Добавить</button>
@@ -70,7 +71,9 @@
       <section class="task-list__section">
         <div class="task-list__container-header">
           <h2 class="task-list__title">Список задач</h2>
-          <p class="task-list__info">6 задач · 2 выпелнены</p>
+          <p class="task-list__info">
+            6 задач <span class="task-list__info_completed"> · 2 выполнены</span>
+          </p>
         </div>
         <div class="task-list">
           <div class="task-card">
