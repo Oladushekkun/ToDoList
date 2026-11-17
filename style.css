@@ -259,7 +259,6 @@ p {
   }
 
   .header {
-    padding-bottom: 0;
   }
 
   .header__title {
@@ -271,7 +270,7 @@ p {
   }
 
   .task-form__group {
-    gap: 8px;
+    gap: 9px;
   }
 
   .task-form__label {
@@ -279,6 +278,12 @@ p {
   }
 
   .task-form__input {
+    letter-spacing: 0%;
+    padding-left: 11px;
+  }
+
+  .task-form__input[name="description"] {
+    padding: 2px 12px 18px 12px;
   }
 
   .task-form__fields {
@@ -287,8 +292,7 @@ p {
 
   .task-form__select {
     height: 44px;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 2px 0px 0px 11px;
   }
 
   .task-form__footer .task-form__note {
@@ -297,11 +301,11 @@ p {
 
   .task-container__button {
     width: 100%;
+    margin-top: 4px;
   }
 
   .task-list__container-header {
-    padding-top: 0;
-    padding-bottom: 12px;
+    padding: 25px 0px 18px 0px;
   }
 
   .task-list__title {
@@ -316,28 +320,31 @@ p {
   }
   .task-card {
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 0px;
     padding-bottom: 20px;
-    padding-top: 20px;
+    padding-top: 18px;
   }
 
   .task-card__label {
     flex-basis: 100%; /* распр раст*/
+    align-items: unset;
   }
 
   .task-card__checkbox {
-    margin-left: 0;
-    align-self: baseline;
-    margin: 11px;
+    margin: 8px 14px;
   }
 
   .task-card__content {
     margin-left: 0px;
     gap: 10px;
-    display: -webkit-box; /* Почитать про это!!!*/
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
+    display: flex;
+  }
+
+  .task-card__title {
+  }
+
+  .task-card__description {
+    font-size: 16px;
   }
 
   .task-card__button {
