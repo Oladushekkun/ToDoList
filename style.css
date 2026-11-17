@@ -17,6 +17,7 @@
 
 body {
   background-color: #f6f7f9;
+  margin: 0;
 }
 
 h1 {
@@ -254,7 +255,6 @@ p {
   .container {
     display: flex;
     flex-direction: column;
-    gap: 24px;
     padding: 24px 16px;
   }
 
@@ -264,6 +264,21 @@ p {
 
   .header__title {
     padding-top: 0;
+    font-size: 28px;
+  }
+
+  .task-form {
+  }
+
+  .task-form__group {
+    gap: 8px;
+  }
+
+  .task-form__label {
+    padding: 0;
+  }
+
+  .task-form__input {
   }
 
   .task-form__fields {
