@@ -32,16 +32,16 @@
 
           <div class="task-form__group">
             <label class="task-form__label" for="task-form__input-description">
-              Описание <span class="task-form__note">· необязательно</span>
+              Описание
+              <span class="task-form__description-note">· необязательно</span>
             </label>
 
-            <input
-              class="task-form__input"
-              type="text"
+            <textarea
+              class="task-form__textarea"
               id="task-form__input-description"
               name="description"
-              placeholder="Что нужно сделать?"
-            />
+              placeholder="Что нужно сделать?"  
+            ></textarea>
           </div>
 
           <div class="task-form__group">
@@ -62,9 +62,9 @@
         </div>
 
         <div class="task-form__footer">
-          <p class="task-form__note">*Обязательное поле</p>
+          <p class="task-form__footer-note">*Обязательное поле</p>
 
-          <button class="task-container__button">Добавить</button>
+          <button class="task-form__button">Добавить</button>
         </div>
       </form>
 
