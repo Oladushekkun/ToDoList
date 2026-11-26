@@ -161,6 +161,7 @@ p {
   text-align: right;
   color: #667182;
   width: 155px;
+  white-space: nowrap; 
 }
 
 .task-list {
@@ -289,18 +290,6 @@ p {
     padding-left: 11px;
   }
 
-  .task-form__textarea {
-    padding-left: 11px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    font-size: 16px;
-    resize: none;
-    align-content: normal;
-    height: 62px;
-    padding-top: 10px;
-    letter-spacing: 0;
-  }
-
   .task-form__fields {
     grid-template-columns: 1fr;
   }
@@ -341,7 +330,6 @@ p {
   }
 
   .task-card__label {
-    flex-basis: 100%;
     align-items: start;
   }
 
