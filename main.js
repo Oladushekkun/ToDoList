@@ -101,6 +101,15 @@ function createCard(task) {
   const priority = document.createElement("div");
   priority.className = "task-card__priority";
   priority.textContent = task.priority;
+
+  if (task.priority === "Низкий") {
+    priority.classList.add("priority-low");
+  } else if (task.priority === "Средний") {
+    priority.classList.add("priority-medium");
+  } else if (task.priority === "Высокий") {
+    priority.classList.add("priority-high");
+  }
+
   card.appendChild(priority);
 
   const deleteButton = document.createElement("button");

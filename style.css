@@ -161,7 +161,7 @@ p {
   text-align: right;
   color: #667182;
   width: 155px;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 .task-list {
@@ -175,6 +175,7 @@ p {
   gap: 4px;
   flex-grow: 1;
   align-items: center;
+  min-width: 0;
 }
 
 .task-card {
@@ -225,11 +226,13 @@ p {
   font-size: 16px;
   gap: 2px;
   margin-left: 15px;
+  min-width: 0;
 }
 
 .task-card__title {
   font-size: 16px;
   cursor: pointer;
+  overflow-wrap: anywhere;
 }
 
 .task-card__description {
@@ -237,11 +240,30 @@ p {
   color: #667182;
   font-weight: 400;
   cursor: pointer;
+  overflow-wrap: anywhere;
 }
 
-.task-card__priority {
+.priority-low {
+  color: green;
+  background-color: #dcfce7;
+  padding: 6px 8px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+.priority-medium {
+  color: orange;
+  background-color: #fef9c3;
+  padding: 6px 8px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+.priority-high {
   color: #a14735;
-  background: #fcf0eb;
+  background-color: #fcf0eb;
   padding: 6px 8px;
   border-radius: 5px;
   text-align: center;
@@ -327,10 +349,12 @@ p {
     gap: 0px;
     padding-bottom: 20px;
     padding-top: 18px;
+    row-gap: 14px;
   }
 
   .task-card__label {
     align-items: start;
+    flex-basis: 100%;
   }
 
   .task-card__checkbox {
