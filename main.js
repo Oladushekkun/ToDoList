@@ -50,6 +50,7 @@ function infoCount() {
 }
 
 function addTask(event) {
+  let id = 0;
   event.preventDefault();
 
   if (nameInput.value.trim() === "") {
@@ -57,11 +58,18 @@ function addTask(event) {
     return;
   }
 
+  if (tasks.length === 0) {
+    id = 1;
+  } else {
+      
+  }
+
   const task = {
     name: nameInput.value,
     description: descriptionInput.value,
     priority: prioritySelect.value,
     completed: false,
+    id: id,
   };
 
   tasks.push(task);
@@ -103,11 +111,14 @@ function createCard(task) {
   priority.textContent = task.priority;
 
   if (task.priority === "Низкий") {
-    priority.classList.add("priority-low");
+    priority.classList.add("task-card__priority-low");
+    priority.classList.add("task-card__priority");
   } else if (task.priority === "Средний") {
-    priority.classList.add("priority-medium");
+    priority.classList.add("task-card__priority-medium");
+    priority.classList.add("task-card__priority");
   } else if (task.priority === "Высокий") {
-    priority.classList.add("priority-high");
+    priority.classList.add("task-card__priority-high");
+    priority.classList.add("task-card__priority");
   }
 
   card.appendChild(priority);
